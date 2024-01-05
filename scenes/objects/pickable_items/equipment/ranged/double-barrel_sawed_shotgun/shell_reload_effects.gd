@@ -1,15 +1,16 @@
 extends Node
 
-export var impulse_position_1 : Vector3 = Vector3(0, 0.2, 0.1)
-export var impulse_position_2 : Vector3 = Vector3(0, 0.2, 0.1)
 
+export var impulse_position_1 : Vector3 = Vector3(0, 0, 0)
+export var impulse_position_2 : Vector3 = Vector3(0, 0, 0)
 
 var shotgun_shell = preload("res://scenes/objects/pickable_items/tiny/ammo/shotgun_shells/12-gauge_shotgun_shell.tscn")
+
+var all_shell_positions : Array = []
 
 onready var shell_position_1 = $"%ShellPosition1"
 onready var shell_position_2 = $"%ShellPosition2"
 
-var all_shell_positions : Array = []
 
 func expell_shotgun_shells():
 	all_shell_positions.append(shell_position_1)
@@ -39,8 +40,8 @@ func expell_shotgun_shells():
 	world_scene.add_child(first_shell)
 	world_scene.add_child(second_shell)
 	
-	first_shell.apply_impulse(impulse_position_1, owner.owner_character.global_transform.basis.z * 3)
-	second_shell.apply_impulse(impulse_position_2, owner.owner_character.global_transform.basis.z * 3)
+	first_shell.apply_impulse(impulse_position_1, owner.owner_character._camera.global_transform.basis.z * 0.006)
+	second_shell.apply_impulse(impulse_position_2, owner.owner_character._camera.global_transform.basis.z * 0.006)
 
 
 func add_shells_to_slot():
@@ -61,6 +62,7 @@ func clear_all_slots():
 
 func player_add_shell():
 	owner.owner_character.player_gun_reload_shells.spawn_bullet_shells(shotgun_shell, Vector3(), Vector3())
+
 
 func player_clear_shell():
 	owner.owner_character.player_gun_reload_shells.clear_shotgun_shells()
