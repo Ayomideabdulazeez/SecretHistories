@@ -12,42 +12,8 @@ onready var shell_position_1 = $"%ShellPosition1"
 onready var shell_position_2 = $"%ShellPosition2"
 
 
-func expell_shotgun_shells() -> void:
-	all_shell_positions.append(shell_position_1)
-	all_shell_positions.append(shell_position_2)
-	
-	print("Expelling shotgun shells")
-	var first_shell = shotgun_shell.instance() as RigidBody
-	var second_shell = shotgun_shell.instance() as RigidBody
-	
-	var shell_position_1 = $"%ShellPosition1".global_translation
-	var shell_position_2 =  $"%ShellPosition2".global_translation
-	
-	first_shell.translation.y += 2
-	second_shell.translation.y += 2
-	first_shell.rotation_degrees.z = 100.695
-	second_shell.rotation_degrees.z = 100.695
-	
-	var world_scene
-	if is_instance_valid(GameManager.game):
-		world_scene = GameManager.game
-	else:
-		world_scene = owner.owner_character.owner as Spatial
-	
-	first_shell.translation = shell_position_1
-	second_shell.translation = shell_position_2
-	
-	world_scene.add_child(first_shell)
-	world_scene.add_child(second_shell)
-	
-	first_shell.apply_impulse(impulse_position_1, owner.owner_character.global_transform.basis.z * 3)
-	second_shell.apply_impulse(impulse_position_2, owner.owner_character.global_transform.basis.z * 3)
-
-
 func add_shells_to_slot() -> void:
 	var added_new_shells = shotgun_shell.instance()
-	added_new_shells.translation = Vector3(0.001, -0.035, 0)
-	added_new_shells.rotation_degrees = Vector3(0, 0, -82.59)
 	for shells_positions in all_shell_positions:
 		if shells_positions.get_child_count() < 1:
 			shells_positions.add_child(added_new_shells)
