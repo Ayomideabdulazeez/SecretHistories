@@ -1,13 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://resources/models/items/tiny_items/ammunition/loose/12Gauge.glb" type="PackedScene" id=1]
-[ext_resource path="res://scenes/objects/pickable_items/equipment/ranged/double-barrel_shotgun/shotgun_reload_shell.gd" type="Script" id=2]
+[ext_resource path="res://resources/fonts/conjuring.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/objects/pickable_items/tiny/ammo/shotgun_shells/12-gauge_shotgun_shell.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/objects/pickable_items/equipment/ranged/double-barrel_shotgun/reload_shotgun_demo.gd" type="Script" id=3]
 [ext_resource path="res://resources/models/items/ranged/double_barrel_shotguns/DoubleBarrel.glb" type="PackedScene" id=4]
-
-[sub_resource type="CylinderShape" id=1]
-height = 0.0556723
-radius = 0.0104657
 
 [sub_resource type="Animation" id=2]
 resource_name = "break_open_weapon"
@@ -257,158 +253,46 @@ tracks/6/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/7/type = "method"
-tracks/7/path = NodePath("../../AnimationPlayer/ShellReloadEffects")
+tracks/7/path = NodePath("..")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.6, 1.6, 1.78, 1.79603, 1.8, 1.9, 2.6, 2.79005, 2.8, 3.44814 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.61 ),
+"transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "expell_shotgun_shells"
-}, {
-"args": [  ],
-"method": "player_add_shell"
-}, {
-"args": [  ],
-"method": "player_add_shell"
-}, {
-"args": [  ],
-"method": "add_shells_to_slot"
-}, {
-"args": [  ],
-"method": "player_clear_shell"
-}, {
-"args": [  ],
-"method": "player_add_shell"
-}, {
-"args": [  ],
-"method": "player_add_shell"
-}, {
-"args": [  ],
-"method": "add_shells_to_slot"
-}, {
-"args": [  ],
-"method": "player_clear_shell"
-}, {
-"args": [  ],
-"method": "clear_all_slots"
+"method": "expell_shells"
 } ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "expell_shells"
-length = 0.4
-step = 0.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition1:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( -0.0149216, 0.0303379, -0.0166096 ), Vector3( -0.121144, 0.0859026, -0.0290655 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition1:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -35.598 ), Vector3( -12.8071, -18.5146, -33.5021 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition2:translation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( -0.0144113, 0.0296822, 0.00872625 ), Vector3( -0.103162, 0.0931132, 0.0149858 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition2:rotation_degrees")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0.00534904, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -35.598 ), Vector3( 18.0159, 27.0203, -31.2355 ) ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "place_slots_back"
-length = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath("DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition1:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( -0.0149216, 0.0303379, -0.0166096 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition1:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -35.598 ) ]
-}
+[sub_resource type="DynamicFont" id=7]
+size = 49
+font_data = ExtResource( 1 )
 
 [node name="ShotgunShellsExpellDemo" type="Spatial"]
 script = ExtResource( 3 )
-
-[node name="RigidBody" type="RigidBody" parent="."]
-script = ExtResource( 2 )
-
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
-transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.00619828, 0, 0.00398695 )
-shape = SubResource( 1 )
+shells_path = ExtResource( 2 )
+shells_path_2 = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.972031, 0.234854, 0, -0.234854, 0.972031, 0, 0.377422, 1.42061 )
+transform = Transform( 1, 0, 0, 0, 0.969124, 0.246576, 0, -0.246576, 0.969124, 0.01, 0.129, 0.695 )
 fov = 44.5
 
 [node name="DoubleBarrel" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.00748744, 3.26703e-05, 0.999972, 0.00436331, 0.99999, 0, -0.999962, 0.00436319, -0.00748751, 0.007, 0, 0.123 )
 
 [node name="DoubleBarrel_Arm" parent="DoubleBarrel" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="ShellPosition1" type="Position3D" parent="DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="0"]
+[node name="ShellExpellPositions" type="Position3D" parent="DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="0"]
 unique_name_in_owner = true
-transform = Transform( 0.813121, 0.582095, 0, -0.582094, 0.813121, 0, 0, 0, 1, -0.0149216, 0.0303379, -0.0166096 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0364608, 0.0531125, -0.0141268 )
 
-[node name="12Gauge" parent="DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition1" instance=ExtResource( 1 )]
-
-[node name="ShellPosition2" type="Position3D" parent="DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="1"]
+[node name="ShellExpellPositions2" type="Position3D" parent="DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="1"]
 unique_name_in_owner = true
-transform = Transform( 0.68885, 0.582095, 0.432032, -0.493132, 0.813121, -0.309281, -0.531325, -8.04663e-07, 0.847168, -0.0144113, 0.0296822, 0.00872625 )
-
-[node name="12Gauge2" parent="DoubleBarrel/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh/ShellPosition2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0366457, 0.0531125, 0.0105765 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DoubleBarrel"]
 unique_name_in_owner = true
@@ -418,8 +302,42 @@ anims/enter_shell_1_weapon = SubResource( 4 )
 anims/enter_shell_2_weapon = SubResource( 5 )
 anims/reload = SubResource( 6 )
 
-[node name="ShellAnimations" type="AnimationPlayer" parent="."]
-anims/expell_shells = SubResource( 7 )
-anims/place_slots_back = SubResource( 9 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -481.0
+margin_top = -275.0
+margin_right = -114.0
+margin_bottom = -120.0
+
+[node name="ReloadGun" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+margin_right = 367.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.48
+custom_fonts/font = SubResource( 7 )
+text = "Reload Gun"
+
+[node name="ExpellShells" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+margin_top = 79.0
+margin_right = 367.0
+margin_bottom = 155.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.48
+custom_fonts/font = SubResource( 7 )
+text = "Expell Shells"
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ReloadGun" to="." method="_on_reload_gun_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/ExpellShells" to="." method="_on_expell_shells_pressed"]
 
 [editable path="DoubleBarrel"]
