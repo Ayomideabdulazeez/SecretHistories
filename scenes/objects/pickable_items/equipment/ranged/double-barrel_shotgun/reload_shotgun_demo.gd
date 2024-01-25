@@ -25,12 +25,13 @@ func set_shell_position(instanced_shell_1 : RigidBody , instance_shell_2 : Rigid
 
 
 func add_impulse_to_shells(shell_1 : RigidBody, shell_2 : RigidBody) -> void:
-	shell_1.apply_impulse(shell_1.global_translation, Vector3(0.2, 1.0, 0.1))
-	shell_2.apply_impulse(shell_2.global_translation, Vector3(-0.2, 1.0, 0.1))
+	shell_1.apply_impulse(shell_1.global_translation, Vector3(0.2, 1.0, 0.6))
+	shell_2.apply_impulse(shell_2.global_translation, Vector3(-0.2, 1.0, 0.6))
 
 
 func _on_reload_gun_pressed() -> void:
-	$"%AnimationPlayer".play("reload")
+	$PlayerAnimationPlayer.play("double_barrel_reload")
+#	$"%AnimationPlayer".play("reload")
 
 
 func _on_expell_shells_pressed() -> void:
