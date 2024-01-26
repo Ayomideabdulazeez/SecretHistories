@@ -3,6 +3,7 @@ extends Spatial
 export var shells_path : PackedScene
 export var shells_path_2 : PackedScene
 
+export var ejection_multiplier : float = 1.0
 
 
 func expell_shells() -> void:
@@ -25,8 +26,8 @@ func set_shell_position(instanced_shell_1 : RigidBody , instance_shell_2 : Rigid
 
 
 func add_impulse_to_shells(shell_1 : RigidBody, shell_2 : RigidBody) -> void:
-	shell_1.apply_impulse(shell_1.global_translation, Vector3(0.2, 1.0, 0.6))
-	shell_2.apply_impulse(shell_2.global_translation, Vector3(-0.2, 1.0, 0.6))
+	shell_1.apply_impulse(shell_1.global_translation, Vector3(0.2, 1.0, 0.3) * ejection_multiplier)
+	shell_2.apply_impulse(shell_2.global_translation, Vector3(-0.2, 1.0, 0.3) * ejection_multiplier)
 
 
 func _on_reload_gun_pressed() -> void:

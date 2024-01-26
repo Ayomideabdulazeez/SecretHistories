@@ -27926,9 +27926,10 @@ tracks/170/keys = PoolRealArray( 0, 1, -3.57425e-08, 1.78814e-07, 0, 5.96046e-08
 script = ExtResource( 3 )
 shells_path = ExtResource( 2 )
 shells_path_2 = ExtResource( 2 )
+ejection_multiplier = 1.3
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.969124, 0.246576, 0, -0.246576, 0.969124, 0.01, 0.129, 0.695 )
+transform = Transform( 1, 0, 0, 0, 0.969124, 0.246576, 0, -0.246576, 0.969124, 0.01, 0.1, 0.022 )
 fov = 44.5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -27996,7 +27997,7 @@ __meta__ = {
 }
 
 [node name="DoubleBarrel" parent="MainCharOnlyArmsGameRig/rig_deform/Skeleton/MainHandAttachement/MainHandEquipmentRoot" instance=ExtResource( 4 )]
-transform = Transform( 0.394218, -0.0162444, 0.91887, 0.0917124, 0.995544, -0.0217471, -0.914425, 0.0928452, 0.393954, 0.0587738, 0.0355356, -0.179796 )
+transform = Transform( 0.390625, -0.0524493, 0.919051, 0.11332, 0.993518, 0.00853453, -0.913544, 0.100813, 0.394039, 0.065, 0.041, -0.18 )
 
 [node name="DoubleBarrel_Arm" parent="MainCharOnlyArmsGameRig/rig_deform/Skeleton/MainHandAttachement/MainHandEquipmentRoot/DoubleBarrel" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
