@@ -7543,7 +7543,7 @@ nodes/Weapon_states/position = Vector2( 460, -540 )
 "nodes/Webley revolver/node" = SubResource( 437 )
 "nodes/Webley revolver/position" = Vector2( 1740, -440 )
 nodes/output/position = Vector2( 5400, -500 )
-node_connections = [ "output", 0, "Hand_Transition", "Double-barrel shotgun", 0, "Weapon_states", "Double-barrel shotgun", 1, "DoubleBarrelReload", "Hand_Transition", 0, "OffHand_MainHand_Blend", "MeleeSpeed", 0, "MeleeThrustL", "Hold_Animation", 0, "Vertical_Hold_Animation", "Hold_Animation", 1, "Horizontal_Hold_Animation", "OffHand_MainHand_Blend", 0, "MeleeSpeed", "OffHand_MainHand_Blend", 1, "OffHand_Weapon_States", "Martini-Henry rifle", 0, "Lee-Metford rifle", "Martini-Henry rifle", 1, "Animation 6", "Offhand_Hold_Animation", 0, "Left_Vertical_Hold_Animation", "Offhand_Hold_Animation", 1, "Left_Horizontal_Hold_Animation", "MeleeThrust", 0, "MeleeChop1", "MeleeThrust", 1, "Animation 10", "MeleeThrustL", 0, "MeleeThrust", "MeleeThrustL", 1, "Animation 11", "OffHand_Weapon_States", 0, "Offhand_Hold_Animation", "OffHand_Weapon_States", 1, "LeftHanded_Pistol_Hold", "OffHand_Weapon_States", 2, "Offhand_Idle", "Sawed-off Martini pistol", 0, "Webley revolver", "Sawed-off Martini pistol", 1, "KyberPassMartini", "Lee-Metford rifle", 0, "Double-barrel shotgun", "Lee-Metford rifle", 1, "Animation 5", "MediumAds", 0, "Rifle_Anim", "MediumAds", 1, "Animation", "MeleeChop1", 0, "Sawed-off shotgun", "MeleeChop1", 1, "Animation 9", "ShotgunAds", 0, "Animation 4", "ShotgunAds", 1, "Animation 3", "SmallAds", 0, "Pistol_Anim", "SmallAds", 1, "Animation 2", "Webley revolver", 0, "Martini-Henry rifle", "Webley revolver", 1, "Animation 7", "Weapon_states", 0, "Hold_Animation", "Weapon_states", 1, "MediumAds", "Weapon_states", 2, "SmallAds", "Weapon_states", 4, "MainHand_Idle", "Weapon_states", 5, "ShotgunAds", "Sawed-off shotgun", 0, "Sawed-off Martini pistol", "Sawed-off shotgun", 1, "Animation 8" ]
+node_connections = [ "output", 0, "Hand_Transition", "Double-barrel shotgun", 0, "Weapon_states", "Double-barrel shotgun", 1, "DoubleBarrelReload", "OffHand_MainHand_Blend", 0, "MeleeSpeed", "OffHand_MainHand_Blend", 1, "OffHand_Weapon_States", "Offhand_Hold_Animation", 0, "Left_Vertical_Hold_Animation", "Offhand_Hold_Animation", 1, "Left_Horizontal_Hold_Animation", "ShotgunAds", 0, "Animation 4", "ShotgunAds", 1, "Animation 3", "MediumAds", 0, "Rifle_Anim", "MediumAds", 1, "Animation", "Webley revolver", 0, "Martini-Henry rifle", "Webley revolver", 1, "Animation 7", "Sawed-off Martini pistol", 0, "Webley revolver", "Sawed-off Martini pistol", 1, "KyberPassMartini", "Sawed-off shotgun", 0, "Sawed-off Martini pistol", "Sawed-off shotgun", 1, "Animation 8", "MeleeThrust", 0, "MeleeChop1", "MeleeThrust", 1, "Animation 10", "Martini-Henry rifle", 0, "Lee-Metford rifle", "Martini-Henry rifle", 1, "Animation 6", "Weapon_states", 0, "Hold_Animation", "Weapon_states", 1, "MediumAds", "Weapon_states", 2, "SmallAds", "Weapon_states", 4, "MainHand_Idle", "Weapon_states", 5, "ShotgunAds", "Hand_Transition", 0, "OffHand_MainHand_Blend", "Hold_Animation", 0, "Vertical_Hold_Animation", "Hold_Animation", 1, "Horizontal_Hold_Animation", "MeleeThrustL", 0, "MeleeThrust", "MeleeThrustL", 1, "Animation 11", "SmallAds", 0, "Pistol_Anim", "SmallAds", 1, "Animation 2", "MeleeChop1", 0, "Sawed-off shotgun", "MeleeChop1", 1, "Animation 9", "MeleeSpeed", 0, "MeleeThrustL", "OffHand_Weapon_States", 0, "Offhand_Hold_Animation", "OffHand_Weapon_States", 1, "LeftHanded_Pistol_Hold", "OffHand_Weapon_States", 2, "Offhand_Idle", "Lee-Metford rifle", 0, "Double-barrel shotgun", "Lee-Metford rifle", 1, "Animation 5" ]
 
 [sub_resource type="CylinderShape" id=41]
 radius = 0.25
@@ -7889,7 +7889,7 @@ layers = 2
 material/0 = ExtResource( 14 )
 
 [node name="MainHandAttachement" type="BoneAttachment" parent="FPSCamera/MainCharOnlyArmsGameRig/rig_deform/Skeleton" index="2"]
-transform = Transform( -0.983741, -0.158619, -0.0842258, 0.154346, -0.986481, 0.0550606, -0.0918209, 0.0411653, 0.994924, -0.239207, 0.857907, 0.0044873 )
+transform = Transform( -0.0633162, -0.988392, -0.138104, 0.996283, -0.0706971, 0.0492062, -0.0583986, -0.134475, 0.989194, -0.71092, 1.3503, -0.0479287 )
 bone_name = "DEF-hand.R"
 
 [node name="MainHandEquipmentRoot" type="Position3D" parent="FPSCamera/MainCharOnlyArmsGameRig/rig_deform/Skeleton/MainHandAttachement" index="0"]
@@ -7900,7 +7900,7 @@ __meta__ = {
 }
 
 [node name="OffHandAttachement" type="BoneAttachment" parent="FPSCamera/MainCharOnlyArmsGameRig/rig_deform/Skeleton" index="3"]
-transform = Transform( -0.986521, 0.144371, 0.0770251, -0.148531, -0.987576, -0.0513085, 0.0686606, -0.0620576, 0.995708, 0.235778, 0.86657, 0.009877 )
+transform = Transform( -0.0777911, 0.988392, 0.130498, -0.9958, -0.0706936, -0.0581721, -0.0482715, -0.134475, 0.989741, 0.707195, 1.35972, -0.0431486 )
 bone_name = "DEF-hand.L"
 
 [node name="OffHandEquipmentRoot" type="Position3D" parent="FPSCamera/MainCharOnlyArmsGameRig/rig_deform/Skeleton/OffHandAttachement" index="0"]
