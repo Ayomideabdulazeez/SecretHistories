@@ -31,6 +31,7 @@ item_drop_sound = ExtResource( 4 )
 item_data = ExtResource( 2 )
 
 [node name="MeshInstance" parent="." index="0"]
+layers = 2
 mesh = SubResource( 1 )
 script = null
 

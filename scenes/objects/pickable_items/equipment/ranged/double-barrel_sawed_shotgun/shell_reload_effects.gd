@@ -23,16 +23,17 @@ func set_shell_position() -> void:
 			else:
 				world_scene = owner.owner_character.owner as Spatial
 			
+			print("Shell positions node is: ", shell_positions_node)
 			world_scene.add_child(shell_instance)
-			shell_instance.global_translation = shell_positions_node.global_translation
-			shell_instance.global_rotation = shell_positions_node.global_rotation
-			add_impulse_to_shells(shell_instance)
+			shell_instance.global_transform.origin = shell_positions_node.global_transform.origin
+			shell_instance.global_transform.basis = shell_positions_node.global_transform.basis
+			add_impulse_to_shells(shell_instance, shell_positions_node.shell_impulse_value)
 
 
-func add_impulse_to_shells(shell : Spatial) -> void:
-	shell.apply_impulse(shell.global_translation, Vector3(0.2, 1.0, 0.3) * ejection_multiplier)
-#	shell_2.apply_impulse(shell_2.global_translation, Vector3(-0.2, 1.0, 0.3) * ejection_multiplier)
-
+func add_impulse_to_shells(shell : RigidBody, impulse_value : Vector3) -> void:
+	print("Adding impulse")
+	shell.apply_impulse(shell.transform.origin, shell.transform.basis.xform(impulse_value) * ejection_multiplier)
+#	shell.apply_central_impulse(shell.transform.basis.xform(impulse_value) * ejection_multiplier)
 
 
 func add_shells_to_slot() -> void:
