@@ -448,14 +448,10 @@ script = ExtResource( 1 )
 [node name="ShellPositionsEject1" type="Position3D" parent="MeshInstance/double_barrel_weapon_reload/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="0"]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036, 0.053, -0.014 )
-script = ExtResource( 15 )
-shell_impulse_value = Vector3( -0.8, 0.7, -0.13 )
 
 [node name="ShellPositionsEject2" type="Position3D" parent="MeshInstance/double_barrel_weapon_reload/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="1"]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037, 0.053, 0.011 )
-script = ExtResource( 15 )
-shell_impulse_value = Vector3( -0.8, 0.7, 0.23 )
 
 [node name="ShellPositions" type="Position3D" parent="MeshInstance/double_barrel_weapon_reload/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="2"]
 unique_name_in_owner = true
