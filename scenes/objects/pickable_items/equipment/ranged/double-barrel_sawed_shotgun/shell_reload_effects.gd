@@ -15,7 +15,7 @@ func expell_shells() -> void:
 
 func set_shell_position() -> void:
 	for shell_positions_node in shell_position_holder.get_children():
-		if "Positions" in shell_positions_node.name:
+		if "Eject" in shell_positions_node.name:
 			var shell_instance : Spatial = shells_path.instance() as Spatial
 			var world_scene
 			if is_instance_valid(GameManager.game):
@@ -39,7 +39,7 @@ func add_impulse_to_shells(shell : RigidBody, impulse_value : Vector3) -> void:
 func add_shells_to_slot() -> void:
 	var added_new_shells = shells_path.instance()
 	for shells_positions_node in shell_position_holder.get_children():
-		if "Positions" in shells_positions_node.name:
+		if not "Eject" in shells_positions_node.name:
 			if shells_positions_node.get_child_count() < 1:
 				shells_positions_node.add_child(added_new_shells)
 
