@@ -26,7 +26,7 @@ func set_shell_position() -> void:
 func add_impulse_to_shells(shell : RigidBody, impulse_value : Vector3) -> void:
 	print("Adding impulse")
 	shell.apply_impulse(shell.transform.origin, shell.transform.basis.xform(impulse_value) * ejection_multiplier)
-#	shell.apply_central_impulse(shell.transform.basis.xform(impulse_value) * ejection_multiplier)
+
 
 func _on_reload_gun_pressed() -> void:
 	$PlayerAnimationPlayer.play("double_barrel_reload")

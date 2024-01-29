@@ -449,13 +449,13 @@ script = ExtResource( 1 )
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036, 0.053, -0.014 )
 script = ExtResource( 15 )
-shell_impulse_value = Vector3( -0.8, 1, -0.1 )
+shell_impulse_value = Vector3( -0.8, 0.7, -0.13 )
 
 [node name="ShellPositions2" type="Position3D" parent="MeshInstance/double_barrel_weapon_reload/DoubleBarrel_Arm/Skeleton/DoubleBarrel_Mesh" index="1"]
 unique_name_in_owner = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037, 0.053, 0.011 )
 script = ExtResource( 15 )
-shell_impulse_value = Vector3( -0.8, 1, 0.1 )
+shell_impulse_value = Vector3( -0.8, 0.7, 0.23 )
 
 [node name="CollisionShape" parent="." index="3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.0358443, -0.0272417 )
